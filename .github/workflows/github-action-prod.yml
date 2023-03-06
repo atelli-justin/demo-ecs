@@ -8,14 +8,14 @@ on:
   #   - main
 
 env:
-  project: ${{ env.PROJECT_NAME }}
+  project: demo-ecs
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}/${{ env.PROJECT_NAME }}
-  ECR_REPOSITORY: ${{ env.PROJECT_NAME }}
+  ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}/demo-ecs
+  ECR_REPOSITORY: demo-ecs
   ECS_CLUSTER: prod
   ECS_TASK_DEFINITION: ${{ secrets.ECS_TASK_DEFINITION }}-task
-  ECS_SERVICE: ${{ env.PROJECT_NAME }}-prod
-  CONTAINER_NAME: ${{ env.PROJECT_NAME }}
+  ECS_SERVICE: demo-ecs-prod
+  CONTAINER_NAME: demo-ecs
 
 jobs:
   deploy:
