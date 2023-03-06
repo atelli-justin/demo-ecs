@@ -1,5 +1,7 @@
 # demo-ecs
 
+Create `test` branch and upload, if test deploy success, merge to main branch, it well auto deploy to production.  
+
 # Creed
 Need replace `${{ env.PROJECT_NAME }}`。
 
