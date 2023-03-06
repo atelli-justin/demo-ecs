@@ -1,6 +1,8 @@
 # demo-ecs
 
 # Creed
+Need replace `${{ env.PROJECT_NAME }}`。
+
 ```
 env:
   project: ${{ env.PROJECT_NAME }}
