@@ -1,0 +1,5 @@
+**/.credentials
+**/credentials_test
+**/credentials_Deploy
+deploy
+task-definition.json

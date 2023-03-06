@@ -1,0 +1,34 @@
+FROM php:8.1-fpm
+
+USER root
+
+ENV BASEDIR=/var/www/html
+ENV WEBROOT $BASEDIR/web
+
+ENV TZ Asia/Taipei
+
+RUN apt update -y && apt install -y nginx git zip curl telnet net-tools openssl unzip tree
+RUN docker-php-ext-install pdo_mysql opcache mysqli
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+
+ADD entrypoint.sh /
+RUN chmod 755 /entrypoint.sh 
+
+COPY ./src $BASEDIR
+
+RUN composer install --working-dir=$BASEDIR
+
+COPY conf/default.conf /etc/nginx/sites-enabled/default.conf
+COPY conf/default.conf /etc/nginx/sites-enabled/default
+
+# RUN tree -L 2 /var/www/html
+
+RUN chmod -Rf 777 /var/www/html/runtime
+RUN chmod -Rf 777 /var/www/html/web/assets
+
+EXPOSE 80
+EXPOSE 9000
+
+ENTRYPOINT ["/entrypoint.sh"]
