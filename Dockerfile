@@ -15,9 +15,6 @@ RUN apk add --no-cache --virtual .build-deps autoconf g++ make && pecl install r
 RUN docker-php-ext-enable redis
 RUN docker-php-ext-install pdo_mysql opcache mysqli
 
-# 加速套件下載的套件
-RUN composer global require hirak/prestissimo && composer clear-cache
-
 ADD entrypoint.sh /
 RUN chmod 755 /entrypoint.sh 
 
