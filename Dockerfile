@@ -9,7 +9,7 @@ ENV TZ Asia/Taipei
 
 # RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
-RUN apk add --no-cache nginx git zip curl telnet net-tools openssl unzip tree 
+RUN apk add --no-cache nginx git zip curl net-tools unzip tree 
 RUN docker-php-ext-install bcmath
 RUN apk add --no-cache --virtual .build-deps autoconf g++ make && pecl install redis && apk del .build-deps
 RUN docker-php-ext-enable redis
