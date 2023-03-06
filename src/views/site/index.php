@@ -7,7 +7,7 @@ $this->title = 'Atelli-ECS-Test-Pages';
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent">
-        <h1 class="display-4">Congratulations! stage 20230303 1400</h1>
+        <h1 class="display-4">Congratulations! stage 20230306 1600</h1>
 
         <p class="lead">You have successfully created your Yii-powered application.</p>
 

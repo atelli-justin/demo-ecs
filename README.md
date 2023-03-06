@@ -1,4 +1,6 @@
 # demo-ecs
+[![CI/CD Pipeline](https://github.com/atelli-justin/demo-ecs/actions/workflows/github-action-prod.yml/badge.svg?branch=main)](https://github.com/atelli-justin/demo-ecs/actions/workflows/github-action-prod.yml)
+[![CI/CD Pipeline](https://github.com/atelli-justin/demo-ecs/actions/workflows/github-action-prod.yml/badge.svg?branch=test)](https://github.com/atelli-justin/demo-ecs/actions/workflows/github-action-prod.yml)
 
 Create `test` branch and upload, if test deploy success, merge to main branch, it well auto deploy to production.  
 
